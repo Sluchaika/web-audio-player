@@ -1,0 +1,134 @@
+body{
+    background: #E4DFB5;
+}
+canvas{
+    margin: 40px auto 10px auto;
+    display: block;
+
+    width: 80%;
+    max-width: 550px;
+    margin: 3em auto;
+    padding: 1em;
+    box-shadow:
+    0 0 0 7px #b89913,
+    0 0 0 14px rgba(232, 199, 41, 0.75),
+    0 0 0 21px rgba(232, 221, 9, 0.56);
+    border-radius: 30px;
+
+
+
+}
+
+#fileLabel{
+    margin: 0px 20px;
+}
+#music{
+    position: absolute;
+    top: 300px;
+    opacity: 0
+}
+button,.file_upload .button{
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 1px rgba(228, 91, 0, 0.85), 0 -1px rgba(178, 157, 176, 0.14);
+    outline: none;
+    border: none;
+    border-radius: 100px;
+    background: rgb(232, 123, 35) radial-gradient(150% 100% at 50% 5px, rgba(186, 117, 20, 0.82), rgba(0,0,0,0));
+    box-shadow: inset rgba(244, 15, 13, 0.86) 0 -2px 5px, inset rgba(252,255,255,.7) 0 2px 5px, rgba(234, 10, 16, 0.88) 0 2px 5px -1px;
+    color: rgb(232, 221, 9);
+    user-select: none;
+    cursor: pointer;
+}
+
+
+.file_upload{
+
+    position: relative;
+    overflow: hidden;
+
+}
+
+.file_upload .button{
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 8em;                  /* example */
+    height: 100%;
+           /* example */
+}
+.file_upload > #fileLabel{
+    background: transparent;     /* example */
+
+}
+
+#wave {
+    width: 180px;
+}
+button:disabled{
+    opacity:0.4;
+}
+button:hover {
+    color: rgb(232, 227, 120);
+    cursor: pointer;
+}
+
+#block {
+    color: #555;
+    font-size: 18px;
+    text-align: center;
+
+    width: 800px;
+    padding: 50px 0;
+    margin: 50px auto;
+
+
+    border: 1px solid #ccc;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+
+
+
+
+    background: linear-gradient(to top, #fce25b, #ecc92b);
+    box-shadow:
+    -1px 0px rgb(220,195,35), -1px 1px rgb(192,167,7),
+    -2px 1px rgb(219,194,34), -2px 2px rgb(191,166,6),
+    -3px 2px rgb(218,193,33), -3px 3px rgb(190,165,5),
+    -4px 3px rgb(217,192,32), -4px 4px rgb(189,164,4),
+    -5px 4px rgb(216,191,31), -5px 5px rgb(188,163,3),
+    -6px 5px rgb(215,190,30), -6px 6px rgb(187,162,2),
+    -7px 6px rgb(214,189,29), -7px 7px rgb(186,161,1),
+    -8px 7px rgb(213,188,28), -8px 8px rgb(185,160,0),
+    -9px 8px rgb(212,187,27), -9px 9px rgb(184,159,0),
+    -10px 9px rgb(211,186,26), -10px 10px rgb(183,158,0),
+    -11px 10px rgb(210,185,25), -11px 11px rgb(182,157,0),
+    -12px 11px rgb(209,184,24), -12px 12px rgb(181,156,0),
+    -13px 12px rgb(208,183,23), -13px 13px rgb(180,155,0),
+    -14px 13px rgb(207,182,22), -14px 14px rgb(179,154,0);
+
+}
+
+#block.hover {
+    background: rgb(232, 199, 41);
+}
+
+
+
+#block.drop {
+
+    background: rgb(232, 199, 41);
+
+}
+#file_name{
+    margin: 20px 0 20px 105px;
+    text-align: left;
+}
