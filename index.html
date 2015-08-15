@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title></title>
@@ -12,61 +12,41 @@
             var canvasWidth = 512,  canvasHeight = 120 ;
             var newCanvas   = createCanvas (canvasWidth, canvasHeight);
             var dropZone = $("#block");
-
             $("#block").append(newCanvas);
             var holst = newCanvas.getContext('2d');
-
-
-
             function stopSound() {
                 if (source) {
                     source.stop();
                 }
             }
-
             $("#stop").click(function() {
-
                 stopSound();
-
             });
-
-
-           $("#play").click(function() {
-
+            $("#play").click(function() {
                 playSound();
-
             });
-
             $("#wave").click(function() {
                 createWave(audioBuffer);
             });
-
             function initSound(arrayBuffer) {
                 context.decodeAudioData(arrayBuffer, function (buffer) {
                     audioBuffer = buffer;
                     $('button').each(function(){
-                      var  $this = $(this);
+                        var  $this = $(this);
                         $this[0].disabled = false;
                     });
                 }, function (e) {
                     console.log('Error decoding', e);
                 });
             }
-
-
-
-
             function playSound() {
                 console.log(audioBuffer);
                 source = context.createBufferSource();
                 source.buffer = audioBuffer;
                 source.loop = false;
                 source.connect(context.destination);
-
                 source.start(0);
             }
-
-
             document.querySelector('input[type="file"]').addEventListener('change', function(e) {
                 var reader = new FileReader();
                 reader.onload = function(e) {
@@ -77,18 +57,13 @@
                 dropZone.removeClass('hover');
                 dropZone.addClass('drop');
             }, false);
-
-
-
             function createWave(buff) {
-
                 var leftChannel = buff.getChannelData(0);
                 var lineOpacity = canvasWidth / leftChannel.length;
                 holst.save();
-                holst.fillStyle = "transparent";  //можно сделать градиент http://www.smartjava.org/content/exploring-html5-web-audio-visualizing-sound
+                holst.fillStyle = "transparent"; 
                 holst.fillRect(0, 0, canvasWidth, canvasHeight);
                 holst.strokeStyle = "red";
-               // holst.globalCompositeOperation = "lighter";
                 holst.translate(0,canvasHeight / 2);
                 holst.globalAlpha = 0.06;
                 for (var i = 0; i < leftChannel.length; i++) {
@@ -100,73 +75,34 @@
                     holst.stroke();
                 }
                 holst.restore();
-
-
             }
-
-            function createCanvas ( w, h ) {
+            function createCanvas (w, h) {
                 var newCanvas = document.createElement('canvas');
-                newCanvas.width  = w;     newCanvas.height = h;
+                newCanvas.width  = w;
+                newCanvas.height = h;
                 return newCanvas;
             }
-
-
-
-
-
             dropZone[0].ondragover = function() {
-
                 dropZone.addClass('hover');
                 return false;
             };
-
             dropZone[0].ondragleave = function() {
                 dropZone.removeClass('hover');
-
                 return false;
             };
-
             dropZone[0].ondrop = function(event) {
                 stopSound();
                 event.preventDefault();
                 dropZone.removeClass('hover');
                 dropZone.addClass('drop');
                 var file = event.dataTransfer.files[0];
-
-
-               var reader = new FileReader();
+                var reader = new FileReader();
                 reader.onload = function (e) {
                     initSound(reader.result);
-
                 };
                 reader.readAsArrayBuffer(file);
-
                 fileLabel.innerHTML =file.name;
-
             };
-
-
-
-
-
-            function stateChange(event) {
-                if (event.target.readyState == 4) {
-                    if (event.target.status == 200) {
-                        dropZone.text('Загрузка успешно завершена!');
-
-
-
-
-                    } else {
-                        dropZone.text('Произошла ошибка!');
-                        dropZone.addClass('error');
-                    }
-                }
-            }
-
-
-
-
         };
 
     </script>
@@ -174,19 +110,17 @@
 </head>
 <body  >
 <div id = "block"  >
-
-
     <label class="file_upload">
         <span class="button">Выбрать</span>
         <input id = "music" type="file" accept="audio/*">
-    </label>
+     </label>
 
-
-<button id = "play"   disabled>Play ►</button>
-<button id="stop" disabled>Stop</button>
+    <button id = "play"   disabled>Play ►</button>
+    <button id="stop" disabled>Stop</button>
     <button id="wave" disabled>Визуализация</button>
     <div id = "file_name"> <label id="fileLabel">Файл не выбран</label></div>
-    </div>
+</div>
+
 
 </body>
 </html>
