@@ -4,7 +4,6 @@ body{
 canvas{
     margin: 40px auto 10px auto;
     display: block;
-
     width: 80%;
     max-width: 550px;
     margin: 3em auto;
@@ -14,9 +13,6 @@ canvas{
     0 0 0 14px rgba(232, 199, 41, 0.75),
     0 0 0 21px rgba(232, 221, 9, 0.56);
     border-radius: 30px;
-
-
-
 }
 
 #fileLabel{
@@ -47,23 +43,19 @@ button,.file_upload .button{
 }
 
 
-.file_upload{
-
+file_upload{
     position: relative;
     overflow: hidden;
-
 }
 
 .file_upload .button{
-
     box-sizing: border-box;
     -moz-box-sizing: border-box;
-    width: 8em;                  /* example */
-    height: 100%;
-           /* example */
+    width: 8em;             
+    height: 100%;       
 }
 .file_upload > #fileLabel{
-    background: transparent;     /* example */
+    background: transparent;    
 
 }
 
@@ -82,22 +74,13 @@ button:hover {
     color: #555;
     font-size: 18px;
     text-align: center;
-
     width: 800px;
     padding: 50px 0;
     margin: 50px auto;
-
-
     border: 1px solid #ccc;
-
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-
-
-
-
-
     background: linear-gradient(to top, #fce25b, #ecc92b);
     box-shadow:
     -1px 0px rgb(220,195,35), -1px 1px rgb(192,167,7),
@@ -114,7 +97,6 @@ button:hover {
     -12px 11px rgb(209,184,24), -12px 12px rgb(181,156,0),
     -13px 12px rgb(208,183,23), -13px 13px rgb(180,155,0),
     -14px 13px rgb(207,182,22), -14px 14px rgb(179,154,0);
-
 }
 
 #block.hover {
@@ -122,9 +104,7 @@ button:hover {
 }
 
 
-
 #block.drop {
-
     background: rgb(232, 199, 41);
 
 }
